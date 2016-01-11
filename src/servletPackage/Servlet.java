@@ -15,16 +15,35 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(description = "This is a sample servlet", urlPatterns = { "/Servlet" })
 public class Servlet extends HttpServlet implements javax.servlet.Servlet {
 	private static final long serialVersionUID = 1L;
+	private int count = 0;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		increment();
 		System.out.println("Test");
 		String searchTerm = request.getParameter("searchTerm");
 		PrintWriter writer = response.getWriter();
+		response.setContentType("text/html");
 		writer.println("You searched for..." + searchTerm);
+		decrement();
+	}
+
+	protected synchronized void increment() {
+		count++;
+	}
+
+	protected synchronized void decrement() {
+		count--;
+	}
+
+	protected synchronized int getCount() {
+		return count;
 	}
 
 }
