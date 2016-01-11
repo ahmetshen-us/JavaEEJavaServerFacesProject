@@ -6,13 +6,13 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextAttributeEvent;
 import javax.servlet.ServletContextAttributeListener;
 
-@DeclareRoles(value={"admin", "guest"})
+@DeclareRoles(value = { "admin", "guest" })
 public class WebContext implements ServletContextAttributeListener {
 
 	private ServletContext context = null;
 
 	@Override
-	@RolesAllowed({"admin", "guest"})
+	@RolesAllowed({ "admin", "guest" })
 	public void attributeAdded(ServletContextAttributeEvent arg0) {
 		context = arg0.getServletContext();
 		System.out.println(arg0.getValue() + " was created");
@@ -30,6 +30,5 @@ public class WebContext implements ServletContextAttributeListener {
 		context = arg0.getServletContext();
 		System.out.println(arg0.getValue() + " was changed");
 	}
-	
 
 }
