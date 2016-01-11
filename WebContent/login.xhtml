@@ -3,12 +3,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
 
 	<h:form>
-		<h:inputText id="inputtext" value="#{nameWrapper.name}" />
+	Name:
+		<h:inputText id="text1" value="#{nameWrapper.name}" />
+		<br />
+		Address:
+		<h:inputText id="text2" value="#{nameWrapper.address}" />
+		<br />
+		Zip:
+		<h:inputText id="text3" value="#{nameWrapper.zip}" />
+		<br />
 		<h:commandButton id="submit" value="Submit" action="PageTwo" />
 	</h:form>
 
