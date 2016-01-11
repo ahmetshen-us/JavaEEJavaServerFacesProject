@@ -3,6 +3,10 @@ package username;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+//java.util.Locale
+//DateFormat.getDateInstance(int,locale)
+//NumberFormat.get[something]Instance(locale)
+
 @ManagedBean
 @SessionScoped
 public class NameWrapper {
@@ -12,11 +16,11 @@ public class NameWrapper {
 	private String zip;
 	@SuppressWarnings("unused")
 	private String outtext;
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -44,5 +48,5 @@ public class NameWrapper {
 	public void setOuttext(String outtext) {
 		this.outtext = outtext;
 	}
-	
+
 }
