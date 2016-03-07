@@ -24,7 +24,6 @@ public class Servlet extends HttpServlet implements javax.servlet.Servlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		increment();
 		System.out.println("Test");
 		String searchTerm = request.getParameter("searchTerm");
